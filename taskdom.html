@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input type="text" class="inputx">
+    <script>
+        document.querySelector('.inputx').addEventListener(
+            'click', () => {
+                alert(`${document.querySelector('.inputx').value}`)
+            }
+        );
+    </script> -->
+
+    <input type="text" class="inputx" placeholder="To do list">
+    <button class="add-btn">Shto ne list</button>
+    <p class="task-list"></p>
+    
+    <script>
+        document.querySelector('.add-btn').addEventListener('click', () => {
+            const inputField = document.querySelector('.inputx');
+            const taskList = document.querySelector('.task-list');
+    
+            if (inputField.value.trim() !== "") {
+                taskList.innerHTML += `<br> ${inputField.value}`;
+                inputField.value = ""; 
+            }
+        });
+    </script>
+</body>
+</html>

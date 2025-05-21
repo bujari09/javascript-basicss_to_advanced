@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+input {
+    width: 150px; 
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #3498db;
+}
+
+button {
+    padding: 10px 18px;
+    font-size: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+p {
+    font-size: 18px;
+    color: #222;
+}
+
+    </style>
+</head>
+<body>
+
+    <body>
+
+        <input type="number" id="nota" placeholder="Shkruaj notën">
+        <button id="shto">Shto Notën</button>
+    
+        <p>Mesatarja: <span id="mesatarja">0</span></p>
+    <script>
+        let notaObj = {
+    lista: [],
+    merrMesataren: function() {
+        let shuma = 0;
+        for (let i = 0; i < this.lista.length; i++) {
+            shuma += this.lista[i];
+        }
+        return this.lista.length ? (shuma / this.lista.length).toFixed(1) : 0;
+    }
+};
+
+document.getElementById("shto").addEventListener("click", function() {
+    let vlera = Number(document.getElementById("nota").value);
+    if (vlera >= 1 && vlera <= 5) {
+        notaObj.lista.push(vlera);
+        document.getElementById("mesatarja").textContent = notaObj.merrMesataren();
+        document.getElementById("nota").value = "";
+    }
+});
+
+    </script>
+</body>
+</html>

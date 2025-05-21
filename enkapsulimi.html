@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <h1>Shkruaj pagen baze: </h1>
+  <input type="number" id="baseSalaryInput">
+  <button onclick="llogaritPagen()">Llogarit</button>
+
+  <p>Paga totale: <span id="wageOutput">0</span> euro</p>
+
+  <script>
+    function llogaritPagen() {
+      let baseSalary = parseFloat(document.getElementById("baseSalaryInput").value);
+
+      let employee = {
+        basesalary: baseSalary,
+        overtime: 10,
+        rate: 20,
+        getWage: function() {
+          return this.basesalary + (this.overtime * this.rate);
+        }
+      };
+
+      document.getElementById("wageOutput").textContent = employee.getWage();
+    }
+  </script>
+
+</body>
+</html>

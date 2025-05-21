@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Grade Calculator</title>
+</head>
+<body>
+  <h1>Final Grade Calculator</h1>
+
+  <label for="examInput">Exam Score:</label>
+  <input type="text" id="examInput" /><br><br>
+
+  <label for="projectInput">Project Score:</label>
+  <input type="text" id="projectInput" /><br><br>
+
+  <button id="calculateBtn">Calculate Final Grade</button>
+
+  <h2>Final Grade: <span id="gradeOutput">--</span></h2>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const calculateButton = document.getElementById("calculateBtn");
+
+    calculateButton.addEventListener("click", function () {
+        const exam = parseFloat(document.getElementById("examInput").value);
+        const project = parseFloat(document.getElementById("projectInput").value);
+
+        if (isNaN(exam) || isNaN(project)) {
+            document.getElementById("gradeOutput").textContent = "Please enter valid numbers!";
+            return;
+        }
+
+        const finalGrade = (exam * 0.6) + (project * 0.4);
+        document.getElementById("gradeOutput").textContent = finalGrade.toFixed(2);
+    });
+});
+
+  </script>
+</body>
+</html>
+
+
