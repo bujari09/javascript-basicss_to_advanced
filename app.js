@@ -895,39 +895,39 @@
 // Kërkesë shtesë: Nëse automjeti është i rezervuar, rentCar() duhet të shfaqë një mesazh që automjeti nuk është i disponueshëm.
 
 //Strukturimi i nje projekti ne OOP 
-class BankAccount {
-    constructor(accountNumber,balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-        console.log (`A/c No .: ${accountNumber}`);
-        console.log (`Opening Balance: $${balance}`);
-    }
-    deposit(amount) {
-        this.balance += amount;
-        console.log(`Deposited: $${amount}`)
-    }
-    withdraw(amount) {
-        if (amount <= this.balance) {
-            this.balance -= amount;
-            console.log(`Withdrawn: $${amount}`);
-        }
-        else
-        {
-            console.log(`Want to withdrawn: $${amount}`);
-            console.log(`Insufficient balance`);
-        }
-    }
-    displayBalance() {
-        console.log(`Account Balance: $${this.balance}`);
-    }
-}
-//Krijimi i nje objekti te klases BankAccount
-const account = new BankAccount(`123`,1500);
-//Funksioni per te deponuar parate
-account.deposit(500);
-//Funksioni per te shikuar gjendjen aktuale
-account.displayBalance();
-//Funksioni per te terhequr para
-account.withdraw(400);
-//Funksioni per te shikuar gjendjen aktuale
-account.displayBalance();
+// class BankAccount {
+//     constructor(accountNumber,balance) {
+//         this.accountNumber = accountNumber;
+//         this.balance = balance;
+//         console.log (`A/c No .: ${accountNumber}`);
+//         console.log (`Opening Balance: $${balance}`);
+//     }
+//     deposit(amount) {
+//         this.balance += amount;
+//         console.log(`Deposited: $${amount}`)
+//     }
+//     withdraw(amount) {
+//         if (amount <= this.balance) {
+//             this.balance -= amount;
+//             console.log(`Withdrawn: $${amount}`);
+//         }
+//         else
+//         {
+//             console.log(`Want to withdrawn: $${amount}`);
+//             console.log(`Insufficient balance`);
+//         }
+//     }
+//     displayBalance() {
+//         console.log(`Account Balance: $${this.balance}`);
+//     }
+// }
+// //Krijimi i nje objekti te klases BankAccount
+// const account = new BankAccount(`123`,1500);
+// //Funksioni per te deponuar parate
+// account.deposit(500);
+// //Funksioni per te shikuar gjendjen aktuale
+// account.displayBalance();
+// //Funksioni per te terhequr para
+// account.withdraw(400);
+// //Funksioni per te shikuar gjendjen aktuale
+// account.displayBalance();
