@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista e Përdoruesve</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .user {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .user h3 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista e Përdoruesve</h1>
+    <div id="user-list">Duke i ngarkuar të dhënat...</div>
+
+    <script>
+        // Marrim të dhënat nga API
+        fetch('https://dummyjson.com/users')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const userList = document.getElementById('user-list');
+                userList.innerHTML = ''; // Fshij tekstin "Duke i ngarkuar..."
+
+                data.users.forEach(user => {
+                    const userDiv = document.createElement('div');
+                    userDiv.className = 'user';
+                    userDiv.innerHTML = `
+                        <h3>${user.firstName} ${user.lastName}</h3>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Gjinia:</strong> ${user.gender}</p>
+                        <p><strong>Mosha:</strong> ${user.age}</p>
+                    `;
+                    userList.appendChild(userDiv);
+                });
+            })
+            .catch(error => {
+                document.getElementById('user-list').innerText = 'Gabim gjatë ngarkimit të të dhënave.';
+                console.error('Gabim:', error);
+            });
+    </script>
+</body>
+</html>
