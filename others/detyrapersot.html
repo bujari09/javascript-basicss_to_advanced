@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Une jam nje h1</h1>
+    <p>Une jam nje Paragraf</p>
+    <h2 onclick="change3()">😀</h2>
+    <h3>Une jam h3-shi qe kam mu bo i gjelbert</h3>
+    <button onclick="change1()">shtypem per mu bo h1-shi i kuq</button>
+    <button onclick="change2()">shtypem per mu bo paragrafi i madh</button>
+     <button onclick="change3()">shtypem per mu bo me syza</button> 
+     <button onclick="change4()">shtypem per me u bo i gjelbert</button>  
+     <script>
+          function change1(){
+                document.querySelector('h1').style.color = "red";
+            }
+            function change2(){
+                document.querySelector('p').style.fontSize = "100px";
+            }
+            function change3(){
+                document.querySelector('h2').textContent = "😎";
+            }  
+            function change4(){
+                document.querySelector('h3').style.color = "green";
+            }
+     </script>
+</body>
+</html>

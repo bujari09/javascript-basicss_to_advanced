@@ -1,4 +1,3 @@
-
 class CarRental {
     constructor(model, licensePlate){
         this.model = model;
@@ -19,8 +18,23 @@ class CarRental {
   }
 }
 
-const veturatest = new CarRental("Audi A4", "05-247-GE");
+const veturatest = new CarRental("Audi A8", "05-247-GE");
+const veturatest2 = new CarRental("BMW X5", "06-123-AB");
+const veturatest3 = new CarRental("Mercedes GLE", "07-456-CD");
+const veturatest4 = new CarRental("Golf 2", "05-247-GE");
 // veturatest.rentCar();
-veturatest.showCarInfo();
-veturatest.rentCar();
-veturatest.showCarInfo();
+// veturatest.showCarInfo();
+// veturatest.rentCar();
+// veturatest.showCarInfo();
+
+
+veturatest4.showCarInfo();
+veturatest4.rentCar();
+veturatest4.rentCar();
+veturatest4.showCarInfo();
+// veturatest3.showCarInfo();
+// veturatest3.rentCar();
+// veturatest3.rentCar();
+// veturatest3.rentCar();
+// veturatest3.rentCar();
+// veturatest3.showCarInfo();
